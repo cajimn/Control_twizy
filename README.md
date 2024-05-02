@@ -1,4 +1,4 @@
-# Control_twizzy
+# Control_twizy
 
 This package is created for UTAC Challenge by ENSTA team 2023-2024 and is responsible for the communication between the [StreetDrone](https://streetdrone.com/) vehicles and ROS based self-driving software stacks. It's based on the repository of StreetDrone (https://github.com/streetdrone-home/SD-VehicleInterface). 
 The focus of this repo is to be used by later groups and to have a more generilised step-by-step with different ubuntu versions, and additional steps in our experience for the functioning of the vehicle connection.
@@ -31,7 +31,12 @@ We strongly suggest that you adhere to the following guideline in conjuction wit
 
 ## STEPS
 
-# UBUNTU - DUAL BOOT
+## UBUNTU - DUAL BOOT
+
+To make the communication between the car and the bus can we must use ROS, for this, at the beginning none of the team members had Ubuntu installed, so we tried to use a virtual machine or download it to windows but then the code generated problems. For this reason the only viable solution that was found was to make a DUAL BOOT on the computer, in this way we would keep our windows operating system and we would also have the ubuntu we wanted.
+For this, keep in mind that all the documentation is based on ROS 1, so the only Ubuntu versions that handle this version are the 3 already mentioned.
+
+Performing the dual boot is really easy and we can follow the instructions in the following video: [Dual boot](https://www.youtube.com/watch?v=tEh1RfmbTBY) or find another of your preference. 
 
 
 ## Building
