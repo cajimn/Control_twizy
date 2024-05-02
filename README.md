@@ -86,6 +86,20 @@ Control
 ------
 To implement control of the vehicle and integrate autonomous driving algorithms, we only need to use Python scripts to receive and send vehicle control information. The step 
 is as follow:
-1. Place the .py file in the folder \Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\scripts.
-
-Make a modification in the file \Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\CMakeLists.txt:
+1. Place the .py file in the folder `\Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\scripts`.
+2. Make a modification in the file `\Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\CMakeLists.txt`:
+* At the very bottom, add:
+```
+catkin_install_python(PROGRAMS scripts/<name of the file.py>
+    DESTINATION ${CATKIN_PACKAGE_BIN_DESTINATION}
+)
+```
+3. Re-run `catkin_make`.
+4. It's possible to modify a Python program directly, without needing to run `catkin_make` each time, once the above steps are done. Simply save the file as you go and launch it.
+5. To launch the Python program, open another terminal and run the following commands:
+```
+cd catkin_ws
+source devel/setup.bash
+cd src/SD-VehicleInterface/vehicle_interface/scripts
+python <file.py>
+```
