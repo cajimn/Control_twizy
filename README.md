@@ -103,3 +103,26 @@ source devel/setup.bash
 cd src/SD-VehicleInterface/vehicle_interface/scripts
 python <file.py>
 ```
+
+We have created a demo version of script Python in our repository. After checking the control message in the folder sd_msgs, we found that the control information should 
+include two parameters which are `torque` and `steer` and represent respectively speed and angle of wheel. So the steps of control are:
+1. Create a publisher object of type `SDControl`.
+```
+pub = rospy.Publisher('sd_control', SDControl, queue_size=1)
+```
+2. Change the value of control parameters
+```
+# Create an instance of the SDControl message
+control_msg = SDControl()
+control_msg.header = Header()
+control_msg.header.stamp = rospy.Time.now()
+control_msg.torque = 50  # Adjust as needed for desired speed
+control_msg.steer = 0  # Go straight
+```
+3. Publish the control message
+```
+while not rospy.is_shutdown():
+ pub.publish(control_msg)
+# Wait for the next time to publish
+ rate.sleep()
+```
