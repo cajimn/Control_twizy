@@ -81,3 +81,11 @@ Parameters
 | sd_gps_imu         | {oxts, peak, none}                        | oxts              | The GPS/IMU used                           |
 | sd_speed_source    | {vehicle_can_speed, imu_speed, ndt_speed} | vehicle_can_speed | Input vehicle speed                        |
 | sd_simulation_mode | {true, false}                             | false             | Use on the car or on the Gazebo simulation |
+
+Control 
+------
+To implement control of the vehicle and integrate autonomous driving algorithms, we only need to use Python scripts to receive and send vehicle control information. The step 
+is as follow:
+1. Place the .py file in the folder \Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\scripts.
+
+Make a modification in the file \Home Folder\catkin_ws\src\SD-VehicleInterface\vehicle_interface\CMakeLists.txt:
