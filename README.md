@@ -48,6 +48,14 @@ If you haven't previously created a catkin workspace, please visit [wiki.ros.org
 ```
 sudo apt-get install ros-kinetic-socketcan-interface ros-kinetic-can-msgs
 ```
+or
+```
+sudo apt-get install ros-melodic-socketcan-interface ros-melodic-can-msgs
+```
+or
+```
+sudo apt-get install ros-noetic-socketcan-interface ros-noetic-can-msgs
+```
 
 3. Build the package
 ```
